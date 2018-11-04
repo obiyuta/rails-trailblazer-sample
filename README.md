@@ -1,0 +1,1 @@
+# rails-trailblazer-sample
