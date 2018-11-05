@@ -1,0 +1,10 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+create_table :articles, id: :bigint, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+  t.integer :user_id, null: false, unsigned: true
+  t.string :title
+  t.text :content
+  t.boolean :is_pickup, default: false
+  t.datetime :deleted_at
+  t.timestamps null: false
+end

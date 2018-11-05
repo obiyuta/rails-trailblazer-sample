@@ -1,0 +1,5 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+require 'articles.schema'
+require 'users.schema'

@@ -1,0 +1,54 @@
+AllCops:
+  Exclude:
+    - 'config/application.rb'
+    - 'config/puma.rb'
+    - 'config/initializers/*'
+    - 'config/environments/*'
+
+Rails:
+  Enabled: true
+
+Rails/DynamicFindBy:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 25
+
+Metrics/BlockLength:
+  Max: 100
+
+Metrics/AbcSize:
+  Enabled: false
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
+LineLength:
+  Max: 100
+
+Documentation:
+  Enabled: false
+
+ClassAndModuleChildren:
+  EnforcedStyle: compact

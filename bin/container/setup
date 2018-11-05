@@ -1,0 +1,34 @@
+#!/bin/bash
+
+main() {
+  check_requirements
+  build_container
+  bundle_install
+  setup_database
+  docker-compose up -d
+}
+
+build_container() {
+  docker-compose build --no-cache
+}
+
+bundle_install() {
+  ./bin/container/run web bundle install --jobs=10 --path vendor/bundle --frozen --no-deployment
+}
+
+check_requirements() {
+  check_command_exists() {
+    if ! eval "command -v ${1} > /dev/null"; then
+      echo "You must install ${1} first."
+      exit 1
+    fi
+  }
+
+  check_command_exists 'docker'
+}
+
+setup_database() {
+  ./bin/container/run web bundle exec rake db:reset
+}
+
+main
